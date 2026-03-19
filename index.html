@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATFA Bariloche - Escuela de Técnicos</title>
+  <title>ATFA Bariloche</title>
 
-  <!-- Bootstrap -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Estilos propios -->
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     /* NAVBAR */
@@ -26,43 +24,54 @@
 
     /* HERO */
     .hero {
-      background: url('assets/img/banner.jpg') center/cover no-repeat;
-      height: 90vh;
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('assets/img/banner.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: white;
-      background-color: #000;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       font-weight: bold;
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
     }
 
     .btn-custom {
       background-color: #1abc9c;
       color: white;
-      border: none;
+      padding: 10px 25px;
+      border-radius: 30px;
+      transition: 0.3s;
     }
 
     .btn-custom:hover {
       background-color: #16a085;
+      transform: scale(1.05);
     }
 
     /* SECCIONES */
     .section {
-      padding: 60px 0;
+      padding: 70px 0;
+    }
+
+    /* CARDS */
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      transition: 0.3s;
+      transform: translateY(-10px);
     }
 
     /* FOOTER */
@@ -115,11 +124,11 @@
   <div>
     <h1>Escuela de Técnicos de Fútbol</h1>
     <p>Formación profesional avalada por AFA y CONMEBOL</p>
-    <a href="contacto.html" class="btn btn-custom mt-3">Más información</a>
+    <a href="contacto.html" class="btn btn-custom">Más información</a>
   </div>
 </section>
 
-<!-- SOBRE NOSOTROS -->
+<!-- SOBRE -->
 <section class="section container text-center">
   <h2>Sobre la Escuela</h2>
   <p>
@@ -132,30 +141,36 @@
   <div class="container">
     <h2 class="text-center mb-5">Licencias</h2>
 
-    <div class="row">
+    <div class="row g-4">
+
       <div class="col-md-3">
-        <div class="card p-3 text-center">
+        <div class="card p-4 text-center">
           <h4>Licencia C</h4>
+          <p>Formación inicial para entrenadores</p>
         </div>
       </div>
 
       <div class="col-md-3">
-        <div class="card p-3 text-center">
+        <div class="card p-4 text-center">
           <h4>Licencia B</h4>
+          <p>Entrenamiento amateur</p>
         </div>
       </div>
 
       <div class="col-md-3">
-        <div class="card p-3 text-center">
+        <div class="card p-4 text-center">
           <h4>Licencia A</h4>
+          <p>Nivel profesional</p>
         </div>
       </div>
 
       <div class="col-md-3">
-        <div class="card p-3 text-center">
+        <div class="card p-4 text-center">
           <h4>Licencia PRO</h4>
+          <p>Máxima certificación</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -163,19 +178,17 @@
 <!-- CTA -->
 <section class="section text-center">
   <h2>Inscripciones abiertas</h2>
-  <p>Sumate a la formación profesional en fútbol</p>
-  <a href="contacto.html" class="btn btn-custom">Consultar ahora</a>
+  <p>Sumate a la formación profesional</p>
+  <a href="contacto.html" class="btn btn-custom">Consultar</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© ATFA Bariloche - Escuela de Técnicos</p>
+  <p>© ATFA Bariloche</p>
 </footer>
 
-<!-- WHATSAPP -->
 <a href="https://wa.me/5492944303011" class="whatsapp">💬</a>
 
-<!-- JS -->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 
 </body>
