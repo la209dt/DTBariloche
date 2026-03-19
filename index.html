@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATFA Bariloche - Escuela de Técnicos</title>
+
+  <!-- Bootstrap -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos propios -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: #0a3d2e;
+    }
+
+    .navbar a {
+      color: white !important;
+      font-weight: 500;
+    }
+
+    /* HERO */
+    .hero {
+      background: url('assets/img/banner.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background-color: #000;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .btn-custom {
+      background-color: #1abc9c;
+      color: white;
+      border: none;
+    }
+
+    .btn-custom:hover {
+      background-color: #16a085;
+    }
+
+    /* SECCIONES */
+    .section {
+      padding: 60px 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      transition: 0.3s;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #0a3d2e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      padding: 12px 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand text-white" href="#">ATFA Bariloche</a>
+
+    <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu">
+      ☰
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a href="escuela.html" class="nav-link">Escuela</a></li>
+        <li class="nav-item"><a href="licencias.html" class="nav-link">Licencias</a></li>
+        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Escuela de Técnicos de Fútbol</h1>
+    <p>Formación profesional avalada por AFA y CONMEBOL</p>
+    <a href="contacto.html" class="btn btn-custom mt-3">Más información</a>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="section container text-center">
+  <h2>Sobre la Escuela</h2>
+  <p>
+    Formamos entrenadores profesionales con metodología moderna, combinando teoría y práctica.
+  </p>
+</section>
+
+<!-- LICENCIAS -->
+<section class="section bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Licencias</h2>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card p-3 text-center">
+          <h4>Licencia C</h4>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card p-3 text-center">
+          <h4>Licencia B</h4>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card p-3 text-center">
+          <h4>Licencia A</h4>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card p-3 text-center">
+          <h4>Licencia PRO</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section text-center">
+  <h2>Inscripciones abiertas</h2>
+  <p>Sumate a la formación profesional en fútbol</p>
+  <a href="contacto.html" class="btn btn-custom">Consultar ahora</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© ATFA Bariloche - Escuela de Técnicos</p>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/5492944303011" class="whatsapp">💬</a>
+
+<!-- JS -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
