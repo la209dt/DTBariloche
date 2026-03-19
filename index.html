@@ -28,6 +28,16 @@
       font-weight: 500;
     }
 
+    .logo {
+      height: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        height: 45px;
+      }
+    }
+
     /* HERO */
     .hero {
       height: 100vh;
@@ -38,6 +48,7 @@
       justify-content: center;
       text-align: center;
       color: white;
+      padding: 20px;
     }
 
     .hero h1 {
@@ -55,6 +66,21 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero {
+        height: 80vh;
+      }
+    }
+
+    /* BOTONES */
     .btn-custom {
       background-color: #77AAB5;
       color: white;
@@ -122,7 +148,7 @@
   <div class="container">
 
     <a class="navbar-brand text-white d-flex align-items-center" href="index.html">
-      <img src="assets/img/logo_bariloche.png" style="height:40px; margin-right:10px;">
+      <img src="assets/img/logo_bariloche.png" class="logo" style="margin-right:10px;">
       ATFA Bariloche
     </a>
 
@@ -161,7 +187,8 @@
 <section class="section container text-center">
   <h2>Sobre la Escuela</h2>
   <p>
-    Formamos entrenadores profesionales con metodología moderna, combinando teoría y práctica.
+    La Escuela de Técnicos N° 209 de Bariloche forma entrenadores de fútbol con formación profesional, avalada por AFA y CONMEBOL.
+    Nuestro objetivo es brindar herramientas teóricas y prácticas para el desarrollo integral del entrenador.
   </p>
 </section>
 
@@ -202,6 +229,14 @@
 
     </div>
   </div>
+</section>
+
+<!-- MODALIDAD -->
+<section class="section container text-center">
+  <h2>Modalidad de cursado</h2>
+  <p>
+    Clases teóricas y prácticas, con docentes capacitados y seguimiento personalizado para cada alumno.
+  </p>
 </section>
 
 <!-- CTA -->
