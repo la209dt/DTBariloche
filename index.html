@@ -10,11 +10,17 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     /* NAVBAR */
     .navbar {
-      background-color: #0d3b66;
+      background-color: #77AAB5;
     }
 
     .navbar a {
@@ -25,7 +31,7 @@
     /* HERO */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                   url('assets/img/banner.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -37,15 +43,20 @@
     .hero h1 {
       font-size: 3.2rem;
       font-weight: bold;
+      animation: slideUp 1s ease;
     }
 
     .hero p {
       font-size: 1.3rem;
-      margin-bottom: 20px;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     .btn-custom {
-      background-color: #3da9fc;
+      background-color: #77AAB5;
       color: white;
       padding: 10px 25px;
       border-radius: 30px;
@@ -53,13 +64,14 @@
     }
 
     .btn-custom:hover {
-      background-color: #2b8ae2;
-      transform: scale(1.05);
+      background-color: #5f8f98;
+      transform: scale(1.08);
     }
 
     /* SECCIONES */
     .section {
       padding: 70px 0;
+      animation: fadeIn 1s ease;
     }
 
     /* CARDS */
@@ -72,12 +84,12 @@
     }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.02);
+      transform: translateY(-10px) scale(1.03);
     }
 
     /* FOOTER */
     footer {
-      background-color: #0d3b66;
+      background-color: #77AAB5;
       color: white;
       padding: 20px;
       text-align: center;
@@ -94,6 +106,11 @@
       border-radius: 50%;
       font-size: 20px;
       text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.2);
     }
   </style>
 </head>
@@ -128,7 +145,7 @@
 <section class="hero">
   <div>
 
-    <h3 style="color:#3da9fc;">
+    <h3 style="color:#77AAB5;">
       Escuela de Técnicos N° 209 de Bariloche
     </h3>
 
