@@ -14,51 +14,93 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
     }
 
+    /* NAVBAR */
     .navbar {
-      background-color: #77AAB5;
+      background: #000;
+      border-bottom: 1px solid #77AAB5;
     }
 
     .navbar a {
-      color: white !important;
+      color: #fff !important;
     }
 
     .logo {
       height: 60px;
     }
 
-    @media (max-width: 768px) {
-      .logo {
-        height: 45px;
-      }
-    }
-
+    /* HERO */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
                   url('assets/img/banner.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: white;
     }
 
-    .section {
-      padding: 80px 0;
+    .hero h1 {
+      font-size: 3rem;
     }
 
     .btn-custom {
-      background-color: #77AAB5;
+      background: #77AAB5;
       color: white;
       border-radius: 30px;
       padding: 10px 25px;
     }
 
+    /* SECCIONES */
+    .section {
+      padding: 100px 20px;
+    }
+
+    /* ESCUELA */
+    .escuela-pro {
+      background: #000;
+    }
+
+    .subtitulo {
+      font-size: 3rem;
+      font-style: italic;
+    }
+
+    .contenido {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .foto {
+      width: 220px;
+      border-radius: 50%;
+      border: 4px solid #77AAB5;
+    }
+
+    .firma {
+      width: 150px;
+      margin-top: 10px;
+    }
+
+    .lado-der {
+      max-width: 500px;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    /* LICENCIAS */
     .card {
-      height: 100%;
+      background: #111;
+      border: 1px solid #77AAB5;
+      color: white;
       border-radius: 15px;
+      padding: 20px;
+      text-align: center;
       transition: 0.3s;
     }
 
@@ -66,12 +108,35 @@
       transform: translateY(-10px);
     }
 
+    /* CONTACTO */
+    .contacto p {
+      font-size: 1.2rem;
+    }
+
     footer {
-      background-color: #77AAB5;
-      color: white;
+      border-top: 1px solid #77AAB5;
       text-align: center;
       padding: 20px;
     }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .subtitulo {
+        font-size: 2rem;
+      }
+
+      .contenido {
+        flex-direction: column;
+        text-align: center;
+      }
+
+    }
+
   </style>
 </head>
 
@@ -89,10 +154,10 @@
 
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
-        <li><a class="nav-link" href="#inicio">Inicio</a></li>
-        <li><a class="nav-link" href="#escuela">Escuela</a></li>
-        <li><a class="nav-link" href="#licencias">Licencias</a></li>
-        <li><a class="nav-link" href="#contacto">Contacto</a></li>
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#escuela" class="nav-link">Escuela</a></li>
+        <li><a href="#licencias" class="nav-link">Licencias</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
       </ul>
     </div>
   </div>
@@ -101,73 +166,64 @@
 <!-- HERO -->
 <section id="inicio" class="hero">
   <div>
-    <h3>Escuela de Técnicos N° 209 de Bariloche</h3>
-    <h1>Escuela de Técnicos de Fútbol</h1>
+    <h3 style="color:#77AAB5;">Escuela de Técnicos N° 209</h3>
+    <h1>San Carlos de Bariloche</h1>
     <p>Formación profesional avalada por AFA y CONMEBOL</p>
     <a href="#contacto" class="btn btn-custom">Consultar</a>
   </div>
 </section>
 
 <!-- ESCUELA -->
-<section id="escuela" class="section container text-center">
+<section id="escuela" class="section escuela-pro container">
 
-  <h2>La Escuela</h2>
+  <h2>Escuela</h2>
+
+  <h1 class="subtitulo">Escuela N° 209 San Carlos de Bariloche</h1>
 
   <p>
-    Fundada el 21 de Marzo de 2021 bajo la dirección de Cristian Baldrich, entrenador con licencia PRO que le acredita para dirigir equipos profesionales, nuestra escuela se ha posicionado como un centro de excelencia en la enseñanza de las metodologías y tácticas más innovadoras del fútbol.
+    Fundada el 21 de Marzo de 2021 bajo la dirección de Cristian Baldrich, entrenador con licencia PRO, nuestra escuela se ha posicionado como un centro de excelencia.
   </p>
 
-  <div class="row my-4">
-    <div class="col-md-4">
-      <img src="assets/img/cristian-baldrich.png" class="img-fluid rounded">
+  <div class="contenido">
+
+    <div class="lado-izq text-center">
+      <img src="assets/img/cristian-baldrich.png" class="foto">
+      <h4>DIRECTOR GENERAL</h4>
+      <p>Cristian Baldrich</p>
+      <img src="assets/img/firma.png" class="firma">
     </div>
-    <div class="col-md-4">
-      <img src="assets/img/firma.png" class="img-fluid">
+
+    <div class="lado-der">
+      <p>
+        En nuestra escuela ofrecemos una formación integral para aspirantes a entrenadores de fútbol. Nuestro equipo imparte clases presenciales y virtuales mediante Zoom.
+      </p>
+      <p>
+        El programa contempla asignaturas teóricas y prácticas que permiten obtener licencias en fútbol 11 y futsal.
+      </p>
     </div>
+
   </div>
-
-  <p>
-    En nuestra escuela ofrecemos una formación integral para aspirantes a entrenadores de fútbol. Nuestro equipo de profesionales imparte clases tanto de manera presencial como a través de la plataforma Zoom. El programa contempla asignaturas teóricas y prácticas que permitirán a los alumnos obtener licencias en fútbol 11 y fútbol sala, abarcando todos los niveles desde iniciación hasta profesional. Esta es una excelente oportunidad para quienes deseen desarrollar una carrera sólida en el ámbito del entrenamiento deportivo.
-  </p>
 
 </section>
 
 <!-- LICENCIAS -->
-<section id="licencias" class="section bg-light">
+<section id="licencias" class="section">
+
   <div class="container">
 
     <h2 class="text-center mb-5">Licencias</h2>
 
-    <h4>Requisitos</h4>
-
     <p>
-      Ser mayor de 18 años. Las personas entre 18 y 24 años deberán contar con título secundario, excepto las mayores de 25 años. Cualquier consulta comuníquese con secretaría.
+      Ser mayor de 18 años. Clases semi presenciales y virtuales. Carreras de 2 a 3 años según modalidad.
     </p>
 
-    <h5>Metodología de clase</h5>
-    <p>
-      Las clases son semi presenciales y también se dictan de manera virtual por medio de la plataforma Zoom.
-    </p>
-
-    <h5>Duración y cursada</h5>
-    <p>
-      La carrera de Futsal dura 2 años (Licencia B y A). La de Campo dura 3 años: Licencia C y B, luego A y finalmente PRO.
-      Clases: Lunes, Martes y Jueves 21hs (Campo) y Lunes 21hs + Miércoles 22hs (Futsal).
-    </p>
-
-    <h5>Costos</h5>
-    <p>
-      Consultar a través de nuestras redes sociales.
-    </p>
-
-    <!-- CARDS -->
     <div class="row g-4 mt-4">
 
-      <div class="col-md-4"><div class="card p-3 text-center">Licencia C y B (Campo)</div></div>
-      <div class="col-md-4"><div class="card p-3 text-center">Licencia A (Campo)</div></div>
-      <div class="col-md-4"><div class="card p-3 text-center">Licencia PRO (Campo)</div></div>
-      <div class="col-md-6"><div class="card p-3 text-center">Licencia B (Futsal)</div></div>
-      <div class="col-md-6"><div class="card p-3 text-center">Licencia A (Futsal)</div></div>
+      <div class="col-md-4"><div class="card">Licencia C y B (Campo)</div></div>
+      <div class="col-md-4"><div class="card">Licencia A (Campo)</div></div>
+      <div class="col-md-4"><div class="card">Licencia PRO (Campo)</div></div>
+      <div class="col-md-6"><div class="card">Licencia B (Futsal)</div></div>
+      <div class="col-md-6"><div class="card">Licencia A (Futsal)</div></div>
 
     </div>
 
@@ -176,16 +232,17 @@
     </p>
 
   </div>
+
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="section container text-center">
+<section id="contacto" class="section contacto container text-center">
 
   <h2>Contacto</h2>
 
-  <p>Teléfono: +54 9 2944 303011</p>
-  <p>Email: info@atfabariloche.com</p>
-  <p>Seguinos en nuestras redes sociales</p>
+  <p>📞 +54 9 2944 303011</p>
+  <p>📧 info@atfabariloche.com</p>
+  <p>📱 Seguinos en redes sociales</p>
 
 </section>
 
