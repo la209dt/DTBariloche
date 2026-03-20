@@ -8,24 +8,20 @@
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      animation: fadeIn 1s ease-in;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* NAVBAR */
     .navbar {
       background-color: #77AAB5;
     }
 
     .navbar a {
       color: white !important;
-      font-weight: 500;
     }
 
     .logo {
@@ -38,7 +34,6 @@
       }
     }
 
-    /* HERO */
     .hero {
       height: 100vh;
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
@@ -48,95 +43,34 @@
       justify-content: center;
       text-align: center;
       color: white;
-      padding: 20px;
     }
 
-    .hero h1 {
-      font-size: 3.2rem;
-      font-weight: bold;
-      animation: slideUp 1s ease;
+    .section {
+      padding: 80px 0;
     }
 
-    .hero p {
-      font-size: 1.3rem;
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .hero {
-        height: 80vh;
-      }
-    }
-
-    /* BOTONES */
     .btn-custom {
       background-color: #77AAB5;
       color: white;
-      padding: 10px 25px;
       border-radius: 30px;
-      transition: 0.3s;
+      padding: 10px 25px;
     }
 
-    .btn-custom:hover {
-      background-color: #5f8f98;
-      transform: scale(1.08);
-    }
-
-    /* SECCIONES */
-    .section {
-      padding: 70px 0;
-      animation: fadeIn 1s ease;
-    }
-
-    /* CARDS */
     .card {
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: 0.3s;
       height: 100%;
+      border-radius: 15px;
+      transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.03);
+      transform: translateY(-10px);
     }
 
-    /* FOOTER */
     footer {
       background-color: #77AAB5;
       color: white;
-      padding: 20px;
       text-align: center;
-    }
-
-    /* WHATSAPP */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      padding: 12px 15px;
-      border-radius: 50%;
-      font-size: 20px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.2);
+      padding: 20px;
     }
   </style>
 </head>
@@ -144,114 +78,121 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-
-    <a class="navbar-brand text-white d-flex align-items-center" href="index.html">
-      <img src="assets/img/logo_bariloche.png" class="logo" style="margin-right:10px;">
+    <a class="navbar-brand text-white d-flex align-items-center" href="#">
+      <img src="assets/img/logo_bariloche.png" class="logo me-2">
       ATFA Bariloche
     </a>
 
-    <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu">
-      ☰
-    </button>
+    <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu">☰</button>
 
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
-        <li class="nav-item"><a href="escuela.html" class="nav-link">Escuela</a></li>
-        <li class="nav-item"><a href="licencias.html" class="nav-link">Licencias</a></li>
-        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+        <li><a class="nav-link" href="#inicio">Inicio</a></li>
+        <li><a class="nav-link" href="#escuela">Escuela</a></li>
+        <li><a class="nav-link" href="#licencias">Licencias</a></li>
+        <li><a class="nav-link" href="#contacto">Contacto</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section id="inicio" class="hero">
   <div>
-
-    <h3 style="color:#77AAB5;">
-      Escuela de Técnicos N° 209 de Bariloche
-    </h3>
-
+    <h3>Escuela de Técnicos N° 209 de Bariloche</h3>
     <h1>Escuela de Técnicos de Fútbol</h1>
-
     <p>Formación profesional avalada por AFA y CONMEBOL</p>
-
-    <a href="contacto.html" class="btn btn-custom">Más información</a>
+    <a href="#contacto" class="btn btn-custom">Consultar</a>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="section container text-center">
-  <h2>Sobre la Escuela</h2>
+<!-- ESCUELA -->
+<section id="escuela" class="section container text-center">
+
+  <h2>La Escuela</h2>
+
   <p>
-    La Escuela de Técnicos N° 209 de Bariloche forma entrenadores de fútbol con formación profesional, avalada por AFA y CONMEBOL.
-    Nuestro objetivo es brindar herramientas teóricas y prácticas para el desarrollo integral del entrenador.
+    Fundada el 21 de Marzo de 2021 bajo la dirección de Cristian Baldrich, entrenador con licencia PRO que le acredita para dirigir equipos profesionales, nuestra escuela se ha posicionado como un centro de excelencia en la enseñanza de las metodologías y tácticas más innovadoras del fútbol.
   </p>
+
+  <div class="row my-4">
+    <div class="col-md-4">
+      <img src="assets/img/cristian-baldrich.png" class="img-fluid rounded">
+    </div>
+    <div class="col-md-4">
+      <img src="assets/img/firma.png" class="img-fluid">
+    </div>
+  </div>
+
+  <p>
+    En nuestra escuela ofrecemos una formación integral para aspirantes a entrenadores de fútbol. Nuestro equipo de profesionales imparte clases tanto de manera presencial como a través de la plataforma Zoom. El programa contempla asignaturas teóricas y prácticas que permitirán a los alumnos obtener licencias en fútbol 11 y fútbol sala, abarcando todos los niveles desde iniciación hasta profesional. Esta es una excelente oportunidad para quienes deseen desarrollar una carrera sólida en el ámbito del entrenamiento deportivo.
+  </p>
+
 </section>
 
 <!-- LICENCIAS -->
-<section class="section bg-light">
+<section id="licencias" class="section bg-light">
   <div class="container">
+
     <h2 class="text-center mb-5">Licencias</h2>
 
-    <div class="row g-4 align-items-stretch">
+    <h4>Requisitos</h4>
 
-      <div class="col-md-3">
-        <div class="card p-4 text-center">
-          <h4>Licencia C</h4>
-          <p>Formación inicial para entrenadores</p>
-        </div>
-      </div>
+    <p>
+      Ser mayor de 18 años. Las personas entre 18 y 24 años deberán contar con título secundario, excepto las mayores de 25 años. Cualquier consulta comuníquese con secretaría.
+    </p>
 
-      <div class="col-md-3">
-        <div class="card p-4 text-center">
-          <h4>Licencia B</h4>
-          <p>Entrenamiento amateur</p>
-        </div>
-      </div>
+    <h5>Metodología de clase</h5>
+    <p>
+      Las clases son semi presenciales y también se dictan de manera virtual por medio de la plataforma Zoom.
+    </p>
 
-      <div class="col-md-3">
-        <div class="card p-4 text-center">
-          <h4>Licencia A</h4>
-          <p>Nivel profesional</p>
-        </div>
-      </div>
+    <h5>Duración y cursada</h5>
+    <p>
+      La carrera de Futsal dura 2 años (Licencia B y A). La de Campo dura 3 años: Licencia C y B, luego A y finalmente PRO.
+      Clases: Lunes, Martes y Jueves 21hs (Campo) y Lunes 21hs + Miércoles 22hs (Futsal).
+    </p>
 
-      <div class="col-md-3">
-        <div class="card p-4 text-center">
-          <h4>Licencia PRO</h4>
-          <p>Máxima certificación</p>
-        </div>
-      </div>
+    <h5>Costos</h5>
+    <p>
+      Consultar a través de nuestras redes sociales.
+    </p>
+
+    <!-- CARDS -->
+    <div class="row g-4 mt-4">
+
+      <div class="col-md-4"><div class="card p-3 text-center">Licencia C y B (Campo)</div></div>
+      <div class="col-md-4"><div class="card p-3 text-center">Licencia A (Campo)</div></div>
+      <div class="col-md-4"><div class="card p-3 text-center">Licencia PRO (Campo)</div></div>
+      <div class="col-md-6"><div class="card p-3 text-center">Licencia B (Futsal)</div></div>
+      <div class="col-md-6"><div class="card p-3 text-center">Licencia A (Futsal)</div></div>
 
     </div>
+
+    <p class="text-center mt-4">
+      Preguntá por la carrera de entrenador de arqueros para 2027
+    </p>
+
   </div>
 </section>
 
-<!-- MODALIDAD -->
-<section class="section container text-center">
-  <h2>Modalidad de cursado</h2>
-  <p>
-    Clases teóricas y prácticas, con docentes capacitados y seguimiento personalizado para cada alumno.
-  </p>
-</section>
+<!-- CONTACTO -->
+<section id="contacto" class="section container text-center">
 
-<!-- CTA -->
-<section class="section text-center">
-  <h2>Inscripciones abiertas</h2>
-  <p>Sumate a la formación profesional</p>
-  <a href="contacto.html" class="btn btn-custom">Consultar</a>
+  <h2>Contacto</h2>
+
+  <p>Teléfono: +54 9 2944 303011</p>
+  <p>Email: info@atfabariloche.com</p>
+  <p>Seguinos en nuestras redes sociales</p>
+
 </section>
 
 <!-- FOOTER -->
 <footer>
   <p>© ATFA Bariloche</p>
 </footer>
-
-<a href="https://wa.me/5492944303011" class="whatsapp">💬</a>
 
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 
