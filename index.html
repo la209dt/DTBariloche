@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATFA Bariloche</title>
+
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+:root { --primary:#77AAB5; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'Segoe UI',sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky; /* clave */
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+
+  border-bottom:1px solid var(--primary);
+}
+.navbar a { color:#fff !important; }
+
+.logo { height:80px; }
+
+/* HERO */
+.hero-pro {
+  min-height:100vh;
+  display:flex;
+  align-items:flex-start; /* 👈 clave */
+  padding-top:10px; /* ajustable */
+}
+
+.hero-grid {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.hero-texto h1 {
+  font-size:4rem;
+  line-height:1.1;
+}
+
+.hero-texto span { color:var(--primary); }
+
+.descripcion { margin-top:20px; max-width:500px; }
+
+/* LOGOS */
+.logos {
+  margin-top:40px;
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.logos img {
+  height:50px;
+  opacity:0.85;
+  transition:0.3s;
+}
+
+.logos img:hover {
+  transform:scale(1.1);
+  opacity:1;
+}
+
+/* PELOTA */
+.pelota {
+  width:300px;
+  animation:flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+
+/* SECCIONES */
+.section { padding:60px 20px; }
+
+/* ESCUELA */
+.subtitulo {
+  font-size:3rem;
+  font-style:italic;
+}
+
+.contenido {
+  display:flex;
+  gap:50px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.foto {
+  width:220px;
+  border-radius:50%;
+  border:4px solid var(--primary);
+}
+
+.firma { width:150px; }
+
+.lado-der {
+  max-width:350px;
+  font-style:italic;
+  line-height:1.8;
+}
+ .faq-lateral {
+    min-width: 280px;
+    max-width: 300px;
+  }
+
+/* LICENCIAS */
+.card {
+  background:#111;
+  border:1px solid var(--primary);
+  border-radius:15px;
+  padding:20px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-10px);
+}
+
+/* FAQ PRO */
+.faq-item {
+  border:1px solid var(--primary);
+  border-radius:10px;
+  margin-bottom:15px;
+  overflow:hidden;
+}
+
+.faq-question {
+  padding:15px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#111;
+}
+
+.faq-question:hover { background:#1a1a1a; }
+
+.faq-answer {
+  max-height:0;
+  overflow:hidden;
+  transition:0.4s;
+  background:#000;
+  padding:0 15px;
+}
+
+.faq-item.active .faq-answer {
+  max-height:200px;
+  padding:15px;
+}
+
+.faq-icon {
+  transition:0.3s;
+}
+
+.faq-item.active .faq-icon {
+  transform:rotate(180deg);
+}
+
+/* FOOTER */
+footer {
+  border-top:1px solid var(--primary);
+  text-align:center;
+  padding:20px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:15px;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:20px;
+}
+
+/* MOBILE */
+@media (max-width:768px) {
+
+.hero-texto h1 { font-size:2.5rem; }
+
+.hero-grid {
+  flex-direction:column;
+  text-align:center;
+}
+
+.pelota { width:200px; }
+
+.logos { justify-content:center; }
+
+.subtitulo { font-size:2rem; }
+
+.contenido {
+  flex-direction:column;
+  text-align:center;
+}
+
+.logo { height:60px; }
+
+}
+<style>
+  /* TODO tu CSS que ya tenés */
+
+  /* PEGÁ ESTO ABAJO DE TODO 👇 */
+/* TARJETAS */
+.licencia-card {
+  background: #111;
+  border: 1px solid #77AAB5;
+  border-radius: 12px;
+  padding: 15px;
+  transition: 0.3s;
+  height: 100%;
+}
+
+/* CONTENIDO */
+.licencia-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ICONO MÁS CHICO */
+.licencia-icon {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
+/* TEXTO */
+.licencia-item span {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* HOVER SUAVE */
+.licencia-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 12px rgba(119,170,181,0.3);
+}
+
+.licencia-card:hover .licencia-icon {
+  transform: scale(1.1);
+}
+/* ===== FONDO DIFUSO ===== */
+.section-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('assets/img/fondo.jpg') center/cover no-repeat;
+  filter: blur(5px) brightness(0.7);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.section-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== CONTENIDO A LA DERECHA ===== */
+.contenido-derecha {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.bloque-info {
+  max-width: 500px;
+  background: rgba(0,0,0,0.6);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #77AAB5;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:768px) {
+  .contenido-derecha {
+    justify-content: center;
+  }
+
+  .bloque-info {
+    width: 100%;
+  }
+}
+  section {
+    scroll-margin-top: 100px;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand text-white d-flex align-items-center" href="#">
+<img src="assets/img/fluo.png" class="logo me-2">
+ATFA Bariloche
+</a>
+
+<button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu">☰</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li><a href="#inicio" class="nav-link">Inicio</a></li>
+<li><a href="#escuela" class="nav-link">Escuela</a></li>
+<li><a href="#licencias" class="nav-link">Licencias</a></li>
+<li><a href="#contacto" class="nav-link">Contacto</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio" class="hero-pro">
+<div class="container hero-grid">
+
+<div class="hero-texto">
+<h1>
+Escuela de<br>
+Técnicos de<br>
+Fútbol Bariloche<br>
+<span>Escuela N° 209</span>
+</h1>
+
+<p class="descripcion">
+Título Oficial de Director Técnico de Fútbol de Campo y Futsal, avalado por AFA y CONMEBOL.
+</p>
+
+<div class="logos">
+<img src="assets/img/atfa.png">
+<img src="assets/img/afa.png">
+<img src="assets/img/conmebol.png">
+</div>
+</div>
+
+<div>
+<img src="assets/img/logobariloche.png" class="pelota">
+</div>
+
+</div>
+</section>
+
+<!-- ESCUELA -->
+<section id="escuela" class="section container">
+
+<h2>Escuela</h2>
+<h1 class="subtitulo">N° 209 San Carlos de Bariloche</h1>
+
+<p>
+Fundada el 21 de Marzo de 2021 bajo la dirección de Cristian Baldrich, entrenador con licencia PRO que le acredita para dirigir equipos profesionales, nuestra escuela se ha posicionado como un centro de excelencia en la enseñanza de las metodologías y tácticas más innovadoras del fútbol.
+</p>
+
+<div class="contenido tres-columnas">
+
+<div class="col-izq text-center">
+    <img src="assets/img/cristian-baldrich.png" class="foto">
+    <h4>DIRECTOR GENERAL</h4>
+    <p>Cristian Baldrich</p>
+    <img src="assets/img/firma.png" class="firma">
+  </div>
+
+<div class="col-centro">
+    <div class="lado-der">
+En nuestra escuela ofrecemos una formación integral para aspirantes a entrenadores de fútbol. Nuestro equipo de profesionales imparte clases tanto de manera presencial como a través de la plataforma Zoom. El programa contempla asignaturas teóricas y prácticas que permitirán a los alumnos obtener licencias en fútbol 11 y fútbol sala, abarcando todos los niveles desde iniciación hasta profesional. Esta es una excelente oportunidad para quienes deseen desarrollar una carrera sólida en el ámbito del entrenamiento deportivo
+</div>
+  </div>
+<div class="col-der">
+<!-- FAQ al lado -->
+<div class="faq-lateral">
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Requisitos <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      Ser mayor de 18 años.Las personas entre 18 y 24 años deberán contar con título secundario, excepto las mayores de 25 años. Cualquier consulta comuníquese a traves de nuestras redes.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Modalidad <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      Las clases son semi presenciales. Se usa la plataforma Classroom y de manera virtual por medio de la plataforma Zoom. La modalidad virtual permite estudiar desde cualquier punto del país y del mundo.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Materias <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      La carrera de Director Técnico en ATFA tiene un enfoque interdisciplinario que combina el conocimiento táctico con aspectos científicos y pedagógicos. Se verá contenido como Psicología, Preparación Física, Técnica y Táctica, Reglamento y arbitraje, etc.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Cursada <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      Los días de cursada para la modalidad de Campo son Lunes, Martes y Jueves desde las 21 hs. La modalidad Futsal se cursa entre los días Lunes y Miercoles desde 21hs.
+    </div>
+  </div>
+
+</div>
+</div>
+
+</section>
+
+
+<!-- LICENCIAS -->
+<section id="licencias" class="section section-bg">
+
+  <div class="container contenido-derecha">
+
+    <div class="bloque-info">
+
+      <h2 class="mb-4">Licencias</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-left">
+            <img src="assets/img/futbol.png" class="licencia-icon">
+            Licencia C y B (Campo)
+          </div>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Formación inicial con fundamentos técnicos y tácticos del fútbol.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-left">
+            <img src="assets/img/futbol.png" class="licencia-icon">
+            Licencia A (Campo)
+          </div>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Nivel avanzado orientado a competencia y gestión de equipos.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-left">
+            <img src="assets/img/futbol.png" class="licencia-icon">
+            Licencia PRO (Campo)
+          </div>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Máxima licencia habilitante para dirigir profesionalmente.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-left">
+            <img src="assets/img/futbol.png" class="licencia-icon">
+            Licencia B (Futsal)
+          </div>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Formación específica para fútbol sala.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <div class="faq-left">
+            <img src="assets/img/futbol.png" class="licencia-icon">
+            Licencia A (Futsal)
+          </div>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Nivel avanzado en futsal con enfoque táctico.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section container text-center">
+<h2>Contacto</h2>
+<p>📞 +54 9 2944 303011</p>
+<p>📧 info@atfabariloche.com</p>
+</section>
+
+<a href="https://wa.me/5492944303011" class="whatsapp">💬</a>
+
+<footer>
+<p>© ATFA Bariloche</p>
+</footer>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.querySelectorAll(".faq-question").forEach(q => {
+  q.addEventListener("click", () => {
+
+    const item = q.parentElement;
+
+    // cerrar todos
+    document.querySelectorAll(".faq-item").forEach(i => {
+      if (i !== item) {
+        i.classList.remove("active");
+      }
+    });
+
+    // abrir/cerrar el actual
+    item.classList.toggle("active");
+  });
+});
+</script>
+
+</body>
+</html>
