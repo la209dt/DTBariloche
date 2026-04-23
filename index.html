@@ -175,15 +175,28 @@ body {
 .faq-item.active .faq-icon {
   transform:rotate(180deg);
 }
-.icono-red {
-  width: 30px;
-  height: auto;
-  margin: 8px;
-  transition: 0.3s;
-  .redes {
+/* REDES */
+.redes {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+.redes a {
+  text-decoration: none;
+  border: none;
+}
+
+.icono-red {
+  width: 30px;
+  height: auto;
+  margin: 0;
+  display: block;
+  transition: 0.3s;
+}
+
+.icono-red:hover {
+  transform: scale(1.2);
 }
 
 .icono-red:hover {
