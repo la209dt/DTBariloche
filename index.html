@@ -310,19 +310,17 @@ footer {
   }
 }
   section {
-  scroll-margin-top: 100px;
-}
-
-.redes {
-  display: flex;
-  justify-content: center;
-  gap: 15px; /* separación entre íconos */
-}
-
-.redes a {
+    scroll-margin-top: 100px;
+  }
+  .redes a {
   text-decoration: none;
   display: inline-block;
-  padding: 8px; /* área táctil más grande */
+}
+
+.icono-red {
+  width: 35px;
+  height: auto;
+  display: block;
 }
 </style>
 </head>
@@ -556,7 +554,7 @@ En nuestra escuela ofrecemos una formación integral para aspirantes a entrenado
 <p>© ATFA Bariloche</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 
 <script>
 document.querySelectorAll(".faq-question").forEach(q => {
